@@ -75,10 +75,14 @@ THIRD_PARTY_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+
+    'mptt',
 ]
 
 LOCAL_APPS = [
     "teamwork.users",
+    "teamwork.tasks",
+    "teamwork.skills",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -241,7 +245,7 @@ LOGGING = {
     "formatters": {
         "verbose": {
             "format": "%(levelname)s %(asctime)s %(module)s "
-            "%(process)d %(thread)d %(message)s"
+                      "%(process)d %(thread)d %(message)s"
         }
     },
     "handlers": {
@@ -253,7 +257,6 @@ LOGGING = {
     },
     "root": {"level": "INFO", "handlers": ["console"]},
 }
-
 
 # django-allauth
 # ------------------------------------------------------------------------------
@@ -272,7 +275,6 @@ ACCOUNT_FORMS = {"signup": "teamwork.users.forms.UserSignupForm"}
 SOCIALACCOUNT_ADAPTER = "teamwork.users.adapters.SocialAccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/forms.html
 SOCIALACCOUNT_FORMS = {"signup": "teamwork.users.forms.UserSocialSignupForm"}
-
 
 # Your stuff...
 # ------------------------------------------------------------------------------

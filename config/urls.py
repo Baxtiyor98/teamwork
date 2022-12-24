@@ -14,6 +14,8 @@ urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
     path("users/", include("teamwork.users.urls", namespace="users")),
+    # path("tasks/", include("teamwork.tasks.urls", namespace="tasks")),
+    # path("skills/", include("teamwork.skills.urls", namespace="skills")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
