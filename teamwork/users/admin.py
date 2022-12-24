@@ -3,6 +3,8 @@ from django.contrib.auth import admin as auth_admin
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 
+from teamwork.users.models import Employee, Employer
+
 
 User = get_user_model()
 
@@ -33,3 +35,7 @@ class UserAdmin(admin.ModelAdmin):
         if len(str(obj.password)) < 20:
             obj.set_password(obj.password)
         super(UserAdmin, self).save_model(request, obj, form, change)
+
+
+admin.site.register(Employee)
+admin.site.register(Employer)
